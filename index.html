@@ -1,341 +1,339 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>خطوط زايد | هوديز مرسومة</title>
+<meta name="color-scheme" content="dark">
+<title>ZAYED INK | Hand-drawn Anime Hoodies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Rakkas&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-concrete:#48473f;
-    --bg-concrete-2:#3c3b34;
-    --bg-dark:#211f1c;
-    --ink:#efe9dc;
-    --ink-soft:#bdb6a6;
-    --accent:#b23b30;
-    --accent-2:#d7cdb0;
-    --line:#8f8a7a;
-    --card:#2c2a25;
-    --radius:4px;
+    color-scheme: dark;
+    --bg:#131214;
+    --bg-2:#1b1a1c;
+    --paper:#eee8d9;
+    --ink:#f2efe6;
+    --muted:#96938c;
+    --line:#3a3936;
+    --accent:#e2543c;
+    --accent-soft:#3a2420;
+    --card:#1c1b1d;
+    --radius:6px;
   }
   *{box-sizing:border-box;}
+  html,body{background:var(--bg); color:var(--ink); color-scheme:dark;}
   body{
     margin:0;
-    background:var(--bg-concrete);
-    background-image:
-      radial-gradient(circle at 20% 10%, rgba(255,255,255,.03), transparent 40%),
-      radial-gradient(circle at 80% 60%, rgba(255,255,255,.025), transparent 45%),
-      repeating-linear-gradient(0deg, rgba(0,0,0,.05) 0px, rgba(0,0,0,.05) 1px, transparent 1px, transparent 3px);
-    color:var(--ink);
-    font-family:'IBM Plex Sans Arabic', sans-serif;
+    font-family:'Inter', sans-serif;
     min-height:100vh;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(226,84,60,.07), transparent 45%),
+      radial-gradient(circle at 90% 30%, rgba(255,255,255,.03), transparent 40%),
+      var(--bg);
   }
-  .brand-font{font-family:'Rakkas', serif;}
-  .en-font{font-family:'Anton', sans-serif; letter-spacing:.04em;}
   a{color:inherit;}
-  button{font-family:inherit;}
+  button, input, select, textarea{ color-scheme:dark; font-family:inherit; }
+  input, select, textarea{ background:#0f0e10 !important; color:var(--ink) !important; }
+  h1,h2,h3{ font-family:'Space Grotesk', sans-serif; letter-spacing:-.01em; }
+  .script{ font-family:'Caveat', cursive; }
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
 
-  .wrap{max-width:1100px; margin:0 auto; padding:0 20px;}
-
-  /* header */
-  header{
+  /* nav */
+  nav{
+    position:sticky; top:0; z-index:30;
     display:flex; justify-content:space-between; align-items:center;
-    padding:22px 20px; max-width:1100px; margin:0 auto;
+    padding:18px 24px; backdrop-filter:blur(10px);
+    background:rgba(19,18,20,.85); border-bottom:1px solid var(--line);
   }
-  .logo{font-size:1.4rem; display:flex; align-items:center; gap:10px;}
-  .logo .en-font{font-size:.85rem; color:var(--accent-2); opacity:.8;}
+  .wordmark{ font-size:1.15rem; font-weight:700; display:flex; align-items:baseline; gap:8px;}
+  .wordmark .dot{ color:var(--accent); }
+  nav .links{ display:flex; gap:22px; font-size:.9rem; color:var(--muted); }
+  nav .links a{ text-decoration:none; }
+  nav .links a:hover{ color:var(--ink); }
 
   /* hero */
-  .hero{ text-align:center; padding:60px 20px 40px; position:relative;}
-  .hero h1{
-    font-size:clamp(2.2rem, 7vw, 4rem);
-    margin:0 0 6px;
-    line-height:1.15;
+  .hero{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;
+    padding:70px 0 60px;
   }
-  .hero p.tag{
-    color:var(--ink-soft); font-size:1.05rem; margin:0 0 28px;
+  @media(max-width:860px){ .hero{ grid-template-columns:1fr; padding-top:40px;} }
+  .eyebrow{ color:var(--accent); font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; margin-bottom:14px;}
+  .hero h1{ font-size:clamp(2.1rem,5vw,3.4rem); line-height:1.08; margin:0 0 18px;}
+  .hero h1 .script{ color:var(--accent); font-size:1.15em; font-weight:600;}
+  .hero p.sub{ color:var(--muted); font-size:1.05rem; line-height:1.6; max-width:480px; margin:0 0 30px;}
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer;
+    padding:14px 26px; border-radius:var(--radius); font-weight:600; font-size:.95rem;
+    text-decoration:none; transition:transform .15s ease, background .15s ease;
   }
-  .squiggle{ display:block; margin:0 auto 30px; width:min(320px,80vw); height:60px; }
-  .squiggle path{
-    fill:none; stroke:var(--accent-2); stroke-width:2.2;
-    stroke-linecap:round;
-    stroke-dasharray:600; stroke-dashoffset:600;
-    animation:draw 1.8s ease forwards .3s;
-  }
-  @media (prefers-reduced-motion: reduce){ .squiggle path{animation:none; stroke-dashoffset:0;} }
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  .btn-primary{ background:var(--accent); color:#0f0e10; }
+  .btn-primary:hover{ transform:translateY(-2px); }
+  .btn-ghost{ background:transparent; border:1.5px solid var(--line); color:var(--ink); }
+  .btn-ghost:hover{ border-color:var(--muted); }
 
-  .cta-btn{
-    display:inline-block; background:var(--accent); color:#fff; border:none;
-    padding:14px 30px; border-radius:var(--radius); font-size:1rem; font-weight:600;
-    cursor:pointer; text-decoration:none; box-shadow:0 3px 0 rgba(0,0,0,.25);
-    transition:transform .15s ease;
+  .hero-art{ position:relative; height:380px; }
+  .pin-frame{
+    position:absolute; background:var(--card); border:1px solid var(--line); border-radius:8px;
+    box-shadow:0 18px 40px rgba(0,0,0,.45); overflow:hidden;
   }
-  .cta-btn:hover{ transform:translateY(-2px); }
-  .cta-btn.outline{ background:transparent; border:1.5px solid var(--accent-2); color:var(--ink); box-shadow:none;}
-
-  /* divider */
-  .divider{ width:100%; max-width:500px; margin:10px auto 10px; opacity:.5; }
-  .divider path{ fill:none; stroke:var(--line); stroke-width:1.5; }
-
-  section{ padding:30px 0 10px; }
-  h2.section-title{
-    font-size:1.6rem; text-align:center; margin-bottom:6px;
+  .pin-frame::before{
+    content:''; position:absolute; top:-7px; left:50%; transform:translateX(-50%) rotate(-3deg);
+    width:44px; height:16px; background:rgba(238,232,217,.5); border-radius:2px;
   }
-  p.section-sub{ text-align:center; color:var(--ink-soft); margin-top:0; margin-bottom:34px; font-size:.92rem;}
+  .pf1{ width:58%; height:260px; top:0; left:6%; transform:rotate(-4deg); z-index:2;}
+  .pf2{ width:52%; height:230px; top:110px; right:2%; transform:rotate(5deg); z-index:1;}
+  .pin-frame .ph{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:.8rem; text-align:center; padding:14px;}
+  .pin-frame img{ width:100%; height:100%; object-fit:cover; display:block;}
 
-  /* product grid */
-  .grid{
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
-    gap:22px; padding-bottom:30px;
-  }
+  .squiggle-divider{ display:block; margin:0 auto; width:100%; max-width:200px; opacity:.5;}
+  .squiggle-divider path{ fill:none; stroke:var(--line); stroke-width:1.5;}
+
+  section{ padding:50px 0 10px; }
+  .section-head{ text-align:center; margin-bottom:36px; }
+  .section-head .eyebrow{ text-align:center; }
+  .section-head h2{ font-size:1.8rem; margin:0 0 8px;}
+  .section-head p{ color:var(--muted); margin:0; }
+
+  /* grid */
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:24px; padding-bottom:40px; }
   .card{
-    background:var(--card); border:1px solid rgba(255,255,255,.06);
-    border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column;
-    position:relative;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column; transition:transform .18s ease, border-color .18s ease;
   }
-  .card .tape{
-    position:absolute; top:-6px; right:18px; width:46px; height:18px;
-    background:rgba(215,205,176,.55); transform:rotate(-4deg);
-    box-shadow:0 1px 3px rgba(0,0,0,.3);
-  }
-  .card .imgwrap{ position:relative; aspect-ratio:1/1; background:#1c1b18; overflow:hidden; }
-  .card .imgwrap img{ width:100%; height:100%; object-fit:cover; display:block; }
-  .card .imgwrap .empty-img{
-    width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-    color:var(--ink-soft); font-size:.8rem; text-align:center; padding:10px;
-  }
+  .card:hover{ transform:translateY(-4px); border-color:#55524a; }
+  .imgwrap{ position:relative; aspect-ratio:1/1; background:#0c0b0d; }
+  .imgwrap img{ width:100%; height:100%; object-fit:cover; display:block;}
+  .imgwrap .empty-img{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:.8rem;}
   .flip-btn{
-    position:absolute; bottom:8px; left:8px; background:rgba(0,0,0,.55); color:var(--ink);
-    border:1px solid rgba(255,255,255,.2); border-radius:20px; font-size:.72rem;
-    padding:5px 12px; cursor:pointer;
+    position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,.6); color:var(--ink);
+    border:1px solid rgba(255,255,255,.2); border-radius:20px; font-size:.72rem; padding:5px 12px; cursor:pointer;
   }
-  .card .info{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1;}
-  .card h3{ margin:0; font-size:1.05rem; }
-  .card .desc{ color:var(--ink-soft); font-size:.82rem; margin:0; line-height:1.5;}
-  .card .price{ color:var(--accent-2); font-weight:700; font-size:1.05rem; margin-top:auto;}
-  .card select{
-    background:#1c1b18; color:var(--ink); border:1px solid var(--line);
-    border-radius:var(--radius); padding:8px; font-size:.85rem;
-  }
-  .card .order-btn{
-    background:var(--accent); color:#fff; border:none; padding:10px; border-radius:var(--radius);
-    font-weight:600; cursor:pointer; font-size:.9rem;
-  }
+  .info{ padding:18px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .info h3{ margin:0; font-size:1.05rem; }
+  .info .desc{ color:var(--muted); font-size:.85rem; margin:0; line-height:1.5;}
+  .info .price{ color:var(--paper); font-weight:700; font-size:1.1rem; margin-top:auto; font-family:'Space Grotesk';}
+  .info select{ border:1px solid var(--line); border-radius:var(--radius); padding:9px; font-size:.85rem;}
+  .order-btn{ background:var(--accent); color:#0f0e10; border:none; padding:11px; border-radius:var(--radius); font-weight:700; cursor:pointer; font-size:.9rem;}
 
-  .empty-state{
-    text-align:center; color:var(--ink-soft); padding:50px 20px; border:1.5px dashed var(--line);
-    border-radius:var(--radius); margin-bottom:30px;
-  }
+  .empty-state{ text-align:center; color:var(--muted); padding:60px 20px; border:1.5px dashed var(--line); border-radius:var(--radius); margin-bottom:30px;}
 
-  /* steps */
-  .steps{ display:flex; flex-wrap:wrap; gap:18px; justify-content:center; padding-bottom:20px;}
-  .step{ background:var(--card); border-radius:var(--radius); padding:20px; width:220px; text-align:center;}
-  .step .num{ font-family:'Anton',sans-serif; color:var(--accent); font-size:1.6rem; }
-  .step p{ color:var(--ink-soft); font-size:.85rem; margin:6px 0 0;}
+  .steps{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding-bottom:20px;}
+  .step{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; width:230px; text-align:center;}
+  .step .num{ font-family:'Space Grotesk'; color:var(--accent); font-size:1.7rem; font-weight:700;}
+  .step h4{ margin:8px 0 4px; font-size:.95rem;}
+  .step p{ color:var(--muted); font-size:.83rem; margin:0;}
 
-  footer{ text-align:center; padding:40px 20px 60px; color:var(--ink-soft); font-size:.85rem;}
-  .gear{
-    background:none; border:none; color:var(--ink-soft); cursor:pointer; font-size:1.2rem;
-    opacity:.5; margin-top:14px;
-  }
+  footer{ margin-top:60px; border-top:1px solid var(--line); padding:36px 0 50px; text-align:center; color:var(--muted); font-size:.85rem;}
+  .gear{ background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.2rem; opacity:.45; margin-top:14px;}
   .gear:hover{ opacity:1; }
 
-  /* modal */
-  .overlay{
-    position:fixed; inset:0; background:rgba(10,9,8,.75); display:none;
-    align-items:center; justify-content:center; z-index:50; padding:20px;
-  }
+  .overlay{ position:fixed; inset:0; background:rgba(6,6,7,.8); display:none; align-items:center; justify-content:center; z-index:50; padding:20px; }
   .overlay.show{ display:flex; }
-  .modal{
-    background:var(--bg-dark); border:1px solid rgba(255,255,255,.1); border-radius:6px;
-    max-width:480px; width:100%; max-height:88vh; overflow-y:auto; padding:26px;
-  }
+  .modal{ background:var(--bg-2); border:1px solid var(--line); border-radius:10px; max-width:500px; width:100%; max-height:88vh; overflow-y:auto; padding:28px; position:relative;}
   .modal h3{ margin-top:0; }
   .field{ margin-bottom:14px; display:flex; flex-direction:column; gap:6px;}
-  .field label{ font-size:.85rem; color:var(--ink-soft);}
-  .field input, .field select, .field textarea{
-    background:#1c1b18; color:var(--ink); border:1px solid var(--line); border-radius:var(--radius);
-    padding:10px; font-size:.9rem; font-family:inherit;
-  }
+  .field label{ font-size:.83rem; color:var(--muted);}
+  .field input, .field select, .field textarea{ border:1px solid var(--line); border-radius:var(--radius); padding:10px; font-size:.9rem;}
   .modal-actions{ display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;}
-  .close-x{ position:absolute; top:14px; left:14px; background:none; border:none; color:var(--ink-soft); font-size:1.3rem; cursor:pointer;}
-  .modal{ position:relative; }
-  .confirm-box{ background:#1c1b18; border-radius:var(--radius); padding:16px; font-size:.85rem; color:var(--ink-soft); margin-bottom:16px; line-height:1.8;}
-  .order-ref{ color:var(--accent-2); font-weight:700;}
+  .close-x{ position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:1.3rem; cursor:pointer;}
+  .confirm-box{ background:#0f0e10; border:1px solid var(--line); border-radius:var(--radius); padding:16px; font-size:.85rem; color:var(--muted); margin-bottom:16px; line-height:1.8;}
+  .order-ref{ color:var(--accent); font-weight:700;}
 
-  /* admin */
   .admin-tabs{ display:flex; gap:8px; margin-bottom:18px; flex-wrap:wrap;}
-  .admin-tabs button{
-    background:#1c1b18; border:1px solid var(--line); color:var(--ink-soft); padding:8px 14px;
-    border-radius:20px; font-size:.8rem; cursor:pointer;
-  }
-  .admin-tabs button.active{ background:var(--accent); color:#fff; border-color:var(--accent);}
-  .prod-row{ background:#1c1b18; border-radius:var(--radius); padding:14px; margin-bottom:10px; font-size:.85rem;}
+  .admin-tabs button{ background:#0f0e10; border:1px solid var(--line); color:var(--muted); padding:8px 14px; border-radius:20px; font-size:.8rem; cursor:pointer;}
+  .admin-tabs button.active{ background:var(--accent); color:#0f0e10; border-color:var(--accent);}
+  .prod-row{ background:#0f0e10; border:1px solid var(--line); border-radius:var(--radius); padding:14px; margin-bottom:10px; font-size:.85rem;}
   .prod-row .row-top{ display:flex; justify-content:space-between; align-items:center; gap:10px;}
-  .small-btn{ background:none; border:1px solid var(--line); color:var(--ink-soft); border-radius:var(--radius); padding:6px 10px; font-size:.75rem; cursor:pointer;}
+  .small-btn{ background:none; border:1px solid var(--line); color:var(--muted); border-radius:var(--radius); padding:6px 10px; font-size:.75rem; cursor:pointer;}
   .small-btn.danger{ border-color:var(--accent); color:var(--accent);}
-  .imgupload-row{ display:flex; gap:10px; margin-top:8px;}
-  .imgupload-row label{ font-size:.75rem; color:var(--ink-soft); display:block; margin-bottom:4px;}
-  .thumb{ width:60px; height:60px; object-fit:cover; border-radius:4px; background:#111;}
-  .order-item{ background:#1c1b18; border-radius:var(--radius); padding:12px; margin-bottom:8px; font-size:.82rem;}
+  .imgupload-row{ display:flex; gap:16px; margin-top:8px;}
+  .imgupload-row label{ font-size:.75rem; color:var(--muted); display:block; margin-bottom:4px;}
+  .thumb{ width:64px; height:64px; object-fit:cover; border-radius:6px; background:#000; display:block; margin-top:4px;}
+  .order-item{ background:#0f0e10; border:1px solid var(--line); border-radius:var(--radius); padding:12px; margin-bottom:8px; font-size:.82rem;}
   .order-item .top{ display:flex; justify-content:space-between;}
-  .status-badge{ font-size:.7rem; padding:2px 8px; border-radius:10px; background:var(--accent); color:#fff;}
-  .status-badge.done{ background:#3d6b3d;}
-  .loading{ text-align:center; padding:30px; color:var(--ink-soft);}
+  .status-badge{ font-size:.7rem; padding:2px 8px; border-radius:10px; background:var(--accent); color:#0f0e10; font-weight:700;}
+  .status-badge.done{ background:#3d6b3d; color:#fff;}
+  .loading, .error-msg{ text-align:center; padding:30px; color:var(--muted);}
+  .error-msg{ color:var(--accent);}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    <span class="brand-font" id="brandNameDisplay">خطوط زايد</span>
-    <span class="en-font">ZAYED INK</span>
-  </div>
-</header>
+<nav>
+  <div class="wordmark">ZAYED<span class="dot">.</span>INK</div>
+  <div class="links"><a href="#shop">Shop</a></div>
+</nav>
 
-<div class="hero">
-  <svg class="squiggle" viewBox="0 0 320 60"><path d="M5 40 C 40 5, 70 55, 105 25 S 175 5, 210 35 S 280 55, 315 20"/></svg>
-  <h1 class="brand-font" id="heroTitle">هودي بخط يدك، مرسوم من خيالك</h1>
-  <p class="tag" id="heroTag">تصاميم أنمي أصلية، مطبوعة على هودي قماش ثقيل — من زايد لكم</p>
-  <a href="#shop" class="cta-btn">تصفّح المتجر ↓</a>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Original sketch-line hoodies</div>
+      <h1 id="heroTitle">Hoodies drawn from <span class="script">your own imagination</span></h1>
+      <p class="sub" id="heroTag">Original anime-style line art, hand-drawn by Zayed and printed on heavyweight hoodies. Every design is a limited run.</p>
+      <div class="hero-ctas">
+        <a href="#shop" class="btn btn-primary">Shop the drop →</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="pin-frame pf2"><div class="ph" id="heroImg2">sketch preview</div></div>
+      <div class="pin-frame pf1"><div class="ph" id="heroImg1">sketch preview</div></div>
+    </div>
+  </div>
 </div>
 
-<svg class="divider" viewBox="0 0 500 20"><path d="M0 10 Q125 0 250 10 T500 10"/></svg>
+<svg class="squiggle-divider" viewBox="0 0 200 16"><path d="M0 8 Q50 0 100 8 T200 8"/></svg>
 
 <section id="shop" class="wrap">
-  <h2 class="section-title">المتجر</h2>
-  <p class="section-sub">كل قطعة محدودة — من رسمة إلى هودي</p>
-  <div id="productsArea" class="loading">جاري تحميل المنتجات…</div>
+  <div class="section-head">
+    <div class="eyebrow">The collection</div>
+    <h2>Current drop</h2>
+    <p>Each piece goes from sketchbook to hoodie — nothing reprinted, nothing mass-produced.</p>
+  </div>
+  <div id="productsArea" class="loading">Loading products…</div>
 </section>
 
-<svg class="divider" viewBox="0 0 500 20"><path d="M0 10 Q125 18 250 10 T500 10"/></svg>
-
 <section class="wrap">
-  <h2 class="section-title">كيف تطلب</h2>
+  <div class="section-head">
+    <div class="eyebrow">Process</div>
+    <h2>How ordering works</h2>
+  </div>
   <div class="steps">
-    <div class="step"><div class="num">١</div><div>اختر التصميم والمقاس</div><p>تصفح المتجر واختر الهودي والمقاس المناسب</p></div>
-    <div class="step"><div class="num">٢</div><div>أدخل بياناتك</div><p>الاسم، رقم الجوال، والعنوان للتوصيل</p></div>
-    <div class="step"><div class="num">٣</div><div>ادفع وأرسل الطلب</div><p>ادفع عبر Ziina أو أرسل الطلب مباشرة على واتساب</p></div>
+    <div class="step"><div class="num">01</div><h4>Pick your piece</h4><p>Choose a design and size from the shop above</p></div>
+    <div class="step"><div class="num">02</div><h4>Enter your details</h4><p>Name, phone number and delivery address</p></div>
+    <div class="step"><div class="num">03</div><h4>Pay & confirm</h4><p>Pay via Ziina, then confirm your order on WhatsApp</p></div>
   </div>
 </section>
 
 <footer>
-  <div id="whatsappFooterLine"></div>
-  <div>© 2026 خطوط زايد — تصاميم أصلية</div>
-  <button class="gear" onclick="openAdminLogin()" title="لوحة التحكم">⚙</button>
+  <div id="whatsappFooterLine" style="margin-bottom:6px;"></div>
+  <div>© 2026 Zayed Ink — original designs, made in the UAE</div>
+  <button class="gear" onclick="openAdminLogin()" title="Admin panel">⚙</button>
 </footer>
 
-<!-- ORDER MODAL -->
 <div class="overlay" id="orderOverlay">
-  <div class="modal">
-    <button class="close-x" onclick="closeOverlay('orderOverlay')">✕</button>
-    <div id="orderModalBody"></div>
-  </div>
+  <div class="modal"><button class="close-x" onclick="closeOverlay('orderOverlay')">✕</button><div id="orderModalBody"></div></div>
 </div>
 
-<!-- ADMIN LOGIN -->
 <div class="overlay" id="adminLoginOverlay">
   <div class="modal">
     <button class="close-x" onclick="closeOverlay('adminLoginOverlay')">✕</button>
-    <h3>دخول لوحة التحكم</h3>
-    <div class="field">
-      <label>كلمة المرور</label>
-      <input type="password" id="adminPassInput" placeholder="••••••••">
-    </div>
-    <div id="adminLoginError" style="color:var(--accent); font-size:.8rem;"></div>
-    <div class="modal-actions">
-      <button class="cta-btn" onclick="tryAdminLogin()">دخول</button>
-    </div>
+    <h3>Admin login</h3>
+    <div class="field"><label>Password</label><input type="password" id="adminPassInput" placeholder="••••••••"></div>
+    <div id="adminLoginError" class="error-msg" style="padding:0; text-align:left; min-height:1em;"></div>
+    <div class="modal-actions"><button class="btn btn-primary" onclick="tryAdminLogin()">Log in</button></div>
   </div>
 </div>
 
-<!-- ADMIN PANEL -->
 <div class="overlay" id="adminOverlay">
   <div class="modal" style="max-width:640px;">
     <button class="close-x" onclick="closeOverlay('adminOverlay')">✕</button>
-    <h3>لوحة تحكم زايد</h3>
+    <h3>Admin panel</h3>
     <div class="admin-tabs">
-      <button class="active" data-tab="products" onclick="switchAdminTab('products')">المنتجات</button>
-      <button data-tab="orders" onclick="switchAdminTab('orders')">الطلبات</button>
-      <button data-tab="settings" onclick="switchAdminTab('settings')">الإعدادات</button>
+      <button class="active" data-tab="products" onclick="switchAdminTab('products')">Products</button>
+      <button data-tab="orders" onclick="switchAdminTab('orders')">Orders</button>
+      <button data-tab="settings" onclick="switchAdminTab('settings')">Settings</button>
     </div>
     <div id="adminTabBody"></div>
   </div>
 </div>
 
 <script>
-const ADMIN_PASSWORD = "Zayed2026"; // غيّرها من هنا في الكود
-let STORE = { settings: null, products: [], orders: [] };
-let isAdmin = false;
+const ADMIN_PASSWORD = "Zayed2026"; // change this in the code
+let SETTINGS = null;
+let PRODUCT_INDEX = []; // array of product ids, in display order
+let PRODUCTS = {};      // id -> product object
+let ORDERS = [];
 let editingProductId = null;
 
 function closeOverlay(id){ document.getElementById(id).classList.remove('show'); }
 function openOverlay(id){ document.getElementById(id).classList.add('show'); }
+function escapeHtml(str){ return (str||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-// ---------- storage helpers ----------
-async function loadAll(){
-  try{
-    const s = await window.storage.get('settings', true);
-    STORE.settings = s ? JSON.parse(s.value) : defaultSettings();
-  }catch(e){ STORE.settings = defaultSettings(); }
-  try{
-    const p = await window.storage.get('products', true);
-    STORE.products = p ? JSON.parse(p.value) : [];
-  }catch(e){ STORE.products = []; }
-  try{
-    const o = await window.storage.get('orders', true);
-    STORE.orders = o ? JSON.parse(o.value) : [];
-  }catch(e){ STORE.orders = []; }
-  renderSettings();
-  renderProducts();
-}
 function defaultSettings(){
   return {
-    brandName: "خطوط زايد",
-    heroTitle: "هودي بخط يدك، مرسوم من خيالك",
-    heroTag: "تصاميم أنمي أصلية، مطبوعة على هودي قماش ثقيل — من زايد لكم",
+    brandName: "ZAYED.INK",
+    heroTitle: 'Hoodies drawn from <span class="script">your own imagination</span>',
+    heroTag: "Original anime-style line art, hand-drawn by Zayed and printed on heavyweight hoodies. Every design is a limited run.",
     ziinaLink: "",
     whatsappNumber: ""
   };
 }
-async function saveSettings(){ await window.storage.set('settings', JSON.stringify(STORE.settings), true); }
-async function saveProducts(){ await window.storage.set('products', JSON.stringify(STORE.products), true); }
-async function saveOrders(){ await window.storage.set('orders', JSON.stringify(STORE.orders), true); }
 
-function renderSettings(){
-  document.getElementById('brandNameDisplay').textContent = STORE.settings.brandName;
-  document.getElementById('heroTitle').textContent = STORE.settings.heroTitle;
-  document.getElementById('heroTag').textContent = STORE.settings.heroTag;
-  const wa = document.getElementById('whatsappFooterLine');
-  wa.textContent = STORE.settings.whatsappNumber ? ("للتواصل: " + STORE.settings.whatsappNumber) : "";
+// ---------- load ----------
+async function loadAll(){
+  try{
+    const s = await window.storage.get('settings', true);
+    SETTINGS = s ? JSON.parse(s.value) : defaultSettings();
+  }catch(e){ SETTINGS = defaultSettings(); }
+
+  try{
+    const idx = await window.storage.get('product-index', true);
+    PRODUCT_INDEX = idx ? JSON.parse(idx.value) : [];
+  }catch(e){ PRODUCT_INDEX = []; }
+
+  PRODUCTS = {};
+  for(const id of PRODUCT_INDEX){
+    try{
+      const p = await window.storage.get('product:' + id, true);
+      if(p) PRODUCTS[id] = JSON.parse(p.value);
+    }catch(e){ /* skip missing/corrupt product */ }
+  }
+
+  try{
+    const o = await window.storage.get('orders', true);
+    ORDERS = o ? JSON.parse(o.value) : [];
+  }catch(e){ ORDERS = []; }
+
+  renderSettings();
+  renderProducts();
 }
 
-// ---------- product rendering ----------
+async function saveSettings(){ await window.storage.set('settings', JSON.stringify(SETTINGS), true); }
+async function saveProductIndex(){ await window.storage.set('product-index', JSON.stringify(PRODUCT_INDEX), true); }
+async function saveProduct(p){ await window.storage.set('product:' + p.id, JSON.stringify(p), true); }
+async function deleteProductKey(id){ try{ await window.storage.delete('product:' + id, true); }catch(e){ /* already gone */ } }
+async function saveOrdersList(){ await window.storage.set('orders', JSON.stringify(ORDERS), true); }
+
+function renderSettings(){
+  document.title = SETTINGS.brandName + " | Hand-drawn Anime Hoodies";
+  document.getElementById('heroTitle').innerHTML = 'Hoodies drawn from <span class="script">your own imagination</span>';
+  document.getElementById('heroTag').textContent = SETTINGS.heroTag;
+  const wa = document.getElementById('whatsappFooterLine');
+  wa.textContent = SETTINGS.whatsappNumber ? ("Reach us on WhatsApp: " + SETTINGS.whatsappNumber) : "";
+  document.querySelector('.wordmark').innerHTML = SETTINGS.brandName.replace('.', '<span class="dot">.</span>');
+}
+
+// ---------- products ----------
 function renderProducts(){
   const area = document.getElementById('productsArea');
-  if(!STORE.products.length){
-    area.innerHTML = `<div class="empty-state">لا توجد منتجات بعد.<br>افتح لوحة التحكم (⚙ في الأسفل) لإضافة أول تصميم.</div>`;
+  const list = PRODUCT_INDEX.map(id => PRODUCTS[id]).filter(Boolean);
+
+  // hero preview thumbnails
+  const withImg = list.filter(p => p.frontImage);
+  document.getElementById('heroImg1').outerHTML = withImg[0] ? `<img id="heroImg1" src="${withImg[0].frontImage}">` : `<div class="ph" id="heroImg1">sketch preview</div>`;
+  document.getElementById('heroImg2').outerHTML = withImg[1] ? `<img id="heroImg2" src="${withImg[1].frontImage}">` : `<div class="ph" id="heroImg2">sketch preview</div>`;
+
+  if(!list.length){
+    area.className = '';
+    area.innerHTML = `<div class="empty-state">No products yet.<br>Open the admin panel (⚙ at the bottom) to add your first design.</div>`;
     return;
   }
   area.className = 'grid';
-  area.innerHTML = STORE.products.map(p => `
+  area.innerHTML = list.map(p => `
     <div class="card">
-      <div class="tape"></div>
       <div class="imgwrap">
-        ${ p.frontImage ? `<img src="${p.frontImage}" data-front="${p.id}" style="display:block">` : `<div class="empty-img">بدون صورة</div>` }
-        ${ p.backImage ? `<img src="${p.backImage}" data-back="${p.id}" style="display:none">` : `` }
-        ${ p.backImage ? `<button class="flip-btn" onclick="flipImage('${p.id}')">قلب ↺</button>` : `` }
+        ${ p.frontImage ? `<img data-front="${p.id}" src="${p.frontImage}" style="display:block">` : `<div class="empty-img">No image</div>` }
+        ${ p.backImage ? `<img data-back="${p.id}" src="${p.backImage}" style="display:none">` : `` }
+        ${ p.backImage ? `<button class="flip-btn" onclick="flipImage('${p.id}')">Flip ↺</button>` : `` }
       </div>
       <div class="info">
-        <h3>${escapeHtml(p.nameAr)}</h3>
-        ${ p.descAr ? `<p class="desc">${escapeHtml(p.descAr)}</p>` : '' }
-        <div class="price">${p.price} د.إ</div>
-        <select id="size-${p.id}">
-          ${ (p.sizes||[]).map(s=>`<option value="${s}">${s}</option>`).join('') }
-        </select>
-        <button class="order-btn" onclick="startOrder('${p.id}')">اطلب الآن</button>
+        <h3>${escapeHtml(p.nameEn)}</h3>
+        ${ p.descEn ? `<p class="desc">${escapeHtml(p.descEn)}</p>` : '' }
+        <div class="price">AED ${p.price}</div>
+        <select id="size-${p.id}">${(p.sizes||[]).map(s=>`<option value="${s}">${s}</option>`).join('')}</select>
+        <button class="order-btn" onclick="startOrder('${p.id}')">Order now</button>
       </div>
     </div>
   `).join('');
@@ -348,39 +346,34 @@ function flipImage(id){
   front.style.display = showFront ? 'block':'none';
   back.style.display = showFront ? 'none':'block';
 }
-function escapeHtml(str){
-  return (str||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
 
 // ---------- order flow ----------
 function startOrder(productId){
-  const product = STORE.products.find(p=>p.id===productId);
+  const product = PRODUCTS[productId];
   if(!product) return;
   const size = document.getElementById('size-'+productId).value;
   document.getElementById('orderModalBody').innerHTML = `
-    <h3>إتمام الطلب — ${escapeHtml(product.nameAr)}</h3>
-    <div class="field"><label>المقاس</label><input type="text" id="ordSize" value="${size}" readonly></div>
-    <div class="field"><label>الكمية</label><input type="number" id="ordQty" value="1" min="1"></div>
-    <div class="field"><label>الاسم الكامل</label><input type="text" id="ordName" placeholder="اسمك"></div>
-    <div class="field"><label>رقم الجوال</label><input type="tel" id="ordPhone" placeholder="05xxxxxxxx"></div>
-    <div class="field"><label>الإمارة</label>
+    <h3>Complete your order — ${escapeHtml(product.nameEn)}</h3>
+    <div class="field"><label>Size</label><input type="text" id="ordSize" value="${size}" readonly></div>
+    <div class="field"><label>Quantity</label><input type="number" id="ordQty" value="1" min="1"></div>
+    <div class="field"><label>Full name</label><input type="text" id="ordName" placeholder="Your name"></div>
+    <div class="field"><label>Phone number</label><input type="tel" id="ordPhone" placeholder="05xxxxxxxx"></div>
+    <div class="field"><label>Emirate</label>
       <select id="ordEmirate">
-        <option>دبي</option><option>أبوظبي</option><option>الشارقة</option>
-        <option>عجمان</option><option>رأس الخيمة</option><option>الفجيرة</option><option>أم القيوين</option>
+        <option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option>
+        <option>Ajman</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option>
       </select>
     </div>
-    <div class="field"><label>العنوان التفصيلي</label><textarea id="ordAddress" rows="2" placeholder="المنطقة، الشارع، رقم المبنى..."></textarea></div>
-    <div class="field"><label>ملاحظات (اختياري)</label><textarea id="ordNotes" rows="2"></textarea></div>
-    <div id="ordError" style="color:var(--accent); font-size:.8rem; margin-bottom:8px;"></div>
-    <div class="modal-actions">
-      <button class="cta-btn" onclick="submitOrder('${productId}')">تأكيد الطلب</button>
-    </div>
+    <div class="field"><label>Delivery address</label><textarea id="ordAddress" rows="2" placeholder="Area, street, building..."></textarea></div>
+    <div class="field"><label>Notes (optional)</label><textarea id="ordNotes" rows="2"></textarea></div>
+    <div id="ordError" class="error-msg" style="padding:0; text-align:left; min-height:1em;"></div>
+    <div class="modal-actions"><button class="btn btn-primary" onclick="submitOrder('${productId}')">Confirm order</button></div>
   `;
   openOverlay('orderOverlay');
 }
 
 async function submitOrder(productId){
-  const product = STORE.products.find(p=>p.id===productId);
+  const product = PRODUCTS[productId];
   const name = document.getElementById('ordName').value.trim();
   const phone = document.getElementById('ordPhone').value.trim();
   const emirate = document.getElementById('ordEmirate').value;
@@ -389,40 +382,38 @@ async function submitOrder(productId){
   const size = document.getElementById('ordSize').value;
   const notes = document.getElementById('ordNotes').value.trim();
   if(!name || !phone || !address){
-    document.getElementById('ordError').textContent = 'الرجاء تعبئة الاسم ورقم الجوال والعنوان.';
+    document.getElementById('ordError').textContent = 'Please fill in your name, phone number and address.';
     return;
   }
   const order = {
     id: 'ord_' + Date.now(),
     createdAt: new Date().toISOString(),
-    productName: product.nameAr,
-    price: product.price,
-    size, qty, name, phone, emirate, address, notes,
-    status: 'جديد'
+    productName: product.nameEn, price: product.price,
+    size, qty, name, phone, emirate, address, notes, status: 'New'
   };
-  STORE.orders.unshift(order);
-  try{ await saveOrders(); }catch(e){ console.error(e); }
+  ORDERS.unshift(order);
+  try{ await saveOrdersList(); }catch(e){ console.error(e); }
 
   const total = (parseFloat(product.price) * parseInt(qty||1)).toFixed(0);
   const refShort = order.id.slice(-5);
   const waText = encodeURIComponent(
-    `طلب جديد من المتجر\nرقم الطلب: ${refShort}\nالمنتج: ${product.nameAr}\nالمقاس: ${size}\nالكمية: ${qty}\nالإجمالي: ${total} د.إ\nالاسم: ${name}\nالجوال: ${phone}\nالإمارة: ${emirate}\nالعنوان: ${address}\nملاحظات: ${notes || '-'}`
+    `New order\nOrder #: ${refShort}\nProduct: ${product.nameEn}\nSize: ${size}\nQty: ${qty}\nTotal: AED ${total}\nName: ${name}\nPhone: ${phone}\nEmirate: ${emirate}\nAddress: ${address}\nNotes: ${notes || '-'}`
   );
-  const waNumber = (STORE.settings.whatsappNumber||'').replace(/[^0-9]/g,'');
+  const waNumber = (SETTINGS.whatsappNumber||'').replace(/[^0-9]/g,'');
   const waLink = waNumber ? `https://wa.me/${waNumber}?text=${waText}` : null;
-  const ziinaLink = STORE.settings.ziinaLink || null;
+  const ziinaLink = SETTINGS.ziinaLink || null;
 
   document.getElementById('orderModalBody').innerHTML = `
-    <h3>تم استلام طلبك ✓</h3>
+    <h3>Order received ✓</h3>
     <div class="confirm-box">
-      رقم الطلب: <span class="order-ref">${refShort}</span><br>
-      ${escapeHtml(product.nameAr)} — مقاس ${size} × ${qty}<br>
-      الإجمالي: ${total} د.إ<br><br>
-      لإتمام الطلب، ادفع عبر Ziina ثم أرسل تأكيد الطلب على واتساب.
+      Order #: <span class="order-ref">${refShort}</span><br>
+      ${escapeHtml(product.nameEn)} — size ${size} × ${qty}<br>
+      Total: AED ${total}<br><br>
+      To complete your order, pay via Ziina, then send your order confirmation on WhatsApp.
     </div>
     <div class="modal-actions">
-      ${ ziinaLink ? `<a class="cta-btn" href="${ziinaLink}" target="_blank" rel="noopener">الدفع عبر Ziina</a>` : `<span style="color:var(--ink-soft); font-size:.8rem;">لم يتم إعداد رابط الدفع بعد</span>` }
-      ${ waLink ? `<a class="cta-btn outline" href="${waLink}" target="_blank" rel="noopener">إرسال الطلب عبر واتساب</a>` : '' }
+      ${ ziinaLink ? `<a class="btn btn-primary" href="${ziinaLink}" target="_blank" rel="noopener">Pay with Ziina</a>` : `<span style="color:var(--muted); font-size:.8rem;">Payment link not set up yet</span>` }
+      ${ waLink ? `<a class="btn btn-ghost" href="${waLink}" target="_blank" rel="noopener">Send order on WhatsApp</a>` : '' }
     </div>
   `;
 }
@@ -432,14 +423,13 @@ function openAdminLogin(){ openOverlay('adminLoginOverlay'); }
 function tryAdminLogin(){
   const val = document.getElementById('adminPassInput').value;
   if(val === ADMIN_PASSWORD){
-    isAdmin = true;
     closeOverlay('adminLoginOverlay');
     document.getElementById('adminPassInput').value = '';
     document.getElementById('adminLoginError').textContent = '';
     openOverlay('adminOverlay');
     switchAdminTab('products');
   } else {
-    document.getElementById('adminLoginError').textContent = 'كلمة المرور غير صحيحة';
+    document.getElementById('adminLoginError').textContent = 'Incorrect password';
   }
 }
 
@@ -452,53 +442,53 @@ function switchAdminTab(tab){
 }
 
 function renderAdminProducts(body){
+  const list = PRODUCT_INDEX.map(id => PRODUCTS[id]).filter(Boolean);
   body.innerHTML = `
-    <div style="margin-bottom:14px;">
-      <button class="cta-btn" onclick="showProductForm()">+ إضافة تصميم جديد</button>
-    </div>
+    <div style="margin-bottom:14px;"><button class="btn btn-primary" onclick="showProductForm()">+ Add new design</button></div>
     <div id="productFormArea"></div>
     <div id="productListArea">
-      ${ STORE.products.map(p => `
+      ${ list.map(p => `
         <div class="prod-row">
           <div class="row-top">
-            <div><strong>${escapeHtml(p.nameAr)}</strong> — ${p.price} د.إ</div>
+            <div><strong>${escapeHtml(p.nameEn)}</strong> — AED ${p.price}</div>
             <div style="display:flex; gap:6px;">
-              <button class="small-btn" onclick="showProductForm('${p.id}')">تعديل</button>
-              <button class="small-btn danger" onclick="deleteProduct('${p.id}')">حذف</button>
+              <button class="small-btn" onclick="showProductForm('${p.id}')">Edit</button>
+              <button class="small-btn danger" onclick="deleteProduct('${p.id}')">Delete</button>
             </div>
           </div>
         </div>
-      `).join('') || '<p style="color:var(--ink-soft); font-size:.85rem;">لا توجد منتجات بعد.</p>' }
+      `).join('') || '<p style="color:var(--muted); font-size:.85rem;">No products yet.</p>' }
     </div>
   `;
 }
 
 function showProductForm(productId){
   editingProductId = productId || null;
-  const p = productId ? STORE.products.find(x=>x.id===productId) : { nameAr:'', price:'', sizes:['S','M','L','XL'], descAr:'', frontImage:'', backImage:'' };
+  const p = productId ? PRODUCTS[productId] : { nameEn:'', price:'', sizes:['S','M','L','XL'], descEn:'', frontImage:'', backImage:'' };
   document.getElementById('productFormArea').innerHTML = `
     <div class="prod-row">
-      <div class="field"><label>اسم التصميم</label><input type="text" id="pf_name" value="${escapeHtml(p.nameAr)}"></div>
-      <div class="field"><label>السعر (د.إ)</label><input type="number" id="pf_price" value="${p.price}"></div>
-      <div class="field"><label>المقاسات (افصل بفاصلة)</label><input type="text" id="pf_sizes" value="${(p.sizes||[]).join(',')}"></div>
-      <div class="field"><label>وصف قصير (اختياري)</label><textarea id="pf_desc" rows="2">${escapeHtml(p.descAr)}</textarea></div>
+      <div class="field"><label>Design name</label><input type="text" id="pf_name" value="${escapeHtml(p.nameEn)}"></div>
+      <div class="field"><label>Price (AED)</label><input type="number" id="pf_price" value="${p.price}"></div>
+      <div class="field"><label>Sizes (comma-separated)</label><input type="text" id="pf_sizes" value="${(p.sizes||[]).join(',')}"></div>
+      <div class="field"><label>Short description (optional)</label><textarea id="pf_desc" rows="2">${escapeHtml(p.descEn)}</textarea></div>
       <div class="imgupload-row">
         <div>
-          <label>صورة أمامية</label>
+          <label>Front image</label>
           <input type="file" accept="image/*" onchange="handleImageUpload(event,'front')">
-          ${ p.frontImage ? `<img class="thumb" id="pf_front_thumb" src="${p.frontImage}">` : `<div id="pf_front_thumb"></div>` }
+          <img class="thumb" id="pf_front_thumb" src="${p.frontImage||''}" style="${p.frontImage?'':'display:none'}">
         </div>
         <div>
-          <label>صورة خلفية (اختياري)</label>
+          <label>Back image (optional)</label>
           <input type="file" accept="image/*" onchange="handleImageUpload(event,'back')">
-          ${ p.backImage ? `<img class="thumb" id="pf_back_thumb" src="${p.backImage}">` : `<div id="pf_back_thumb"></div>` }
+          <img class="thumb" id="pf_back_thumb" src="${p.backImage||''}" style="${p.backImage?'':'display:none'}">
         </div>
       </div>
       <input type="hidden" id="pf_frontData" value="${p.frontImage||''}">
       <input type="hidden" id="pf_backData" value="${p.backImage||''}">
+      <div id="pf_error" class="error-msg" style="padding:0; text-align:left; min-height:1em;"></div>
       <div class="modal-actions">
-        <button class="cta-btn" onclick="saveProductForm()">حفظ</button>
-        <button class="small-btn" onclick="document.getElementById('productFormArea').innerHTML=''">إلغاء</button>
+        <button class="btn btn-primary" onclick="saveProductForm()">Save</button>
+        <button class="small-btn" onclick="document.getElementById('productFormArea').innerHTML=''">Cancel</button>
       </div>
     </div>
   `;
@@ -506,22 +496,23 @@ function showProductForm(productId){
 
 function resizeImage(file, maxWidth){
   return new Promise((resolve, reject)=>{
+    if(!file.type.startsWith('image/')){ reject(new Error('Not an image file')); return; }
     const reader = new FileReader();
     reader.onload = e => {
       const img = new Image();
       img.onload = () => {
         const scale = Math.min(1, maxWidth / img.width);
         const canvas = document.createElement('canvas');
-        canvas.width = img.width * scale;
-        canvas.height = img.height * scale;
+        canvas.width = Math.max(1, Math.round(img.width * scale));
+        canvas.height = Math.max(1, Math.round(img.height * scale));
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL('image/jpeg', 0.72));
+        resolve(canvas.toDataURL('image/jpeg', 0.6));
       };
-      img.onerror = reject;
+      img.onerror = () => reject(new Error('Could not read image'));
       img.src = e.target.result;
     };
-    reader.onerror = reject;
+    reader.onerror = () => reject(new Error('Could not read file'));
     reader.readAsDataURL(file);
   });
 }
@@ -529,13 +520,16 @@ function resizeImage(file, maxWidth){
 async function handleImageUpload(event, side){
   const file = event.target.files[0];
   if(!file) return;
+  const errEl = document.getElementById('pf_error');
+  errEl.textContent = '';
   try{
-    const dataUrl = await resizeImage(file, 900);
+    const dataUrl = await resizeImage(file, 700);
     document.getElementById(side==='front' ? 'pf_frontData' : 'pf_backData').value = dataUrl;
-    const thumbEl = document.getElementById(side==='front' ? 'pf_front_thumb' : 'pf_back_thumb');
-    thumbEl.outerHTML = `<img class="thumb" id="pf_${side}_thumb" src="${dataUrl}">`;
+    const thumb = document.getElementById(side==='front' ? 'pf_front_thumb' : 'pf_back_thumb');
+    thumb.src = dataUrl;
+    thumb.style.display = 'block';
   }catch(e){
-    alert('تعذر تحميل الصورة، حاول بصورة أخرى.');
+    errEl.textContent = 'Could not load that image: ' + e.message;
   }
 }
 
@@ -546,79 +540,87 @@ async function saveProductForm(){
   const desc = document.getElementById('pf_desc').value.trim();
   const frontImage = document.getElementById('pf_frontData').value;
   const backImage = document.getElementById('pf_backData').value;
-  if(!name || !price){ alert('الرجاء إدخال الاسم والسعر على الأقل.'); return; }
+  const errEl = document.getElementById('pf_error');
+  errEl.textContent = '';
+  if(!name || !price){ errEl.textContent = 'Please enter at least a name and price.'; return; }
 
-  if(editingProductId){
-    const idx = STORE.products.findIndex(p=>p.id===editingProductId);
-    STORE.products[idx] = { ...STORE.products[idx], nameAr:name, price, sizes, descAr:desc, frontImage, backImage };
-  } else {
-    STORE.products.push({ id:'prod_'+Date.now(), nameAr:name, price, sizes, descAr:desc, frontImage, backImage });
+  const id = editingProductId || ('prod_' + Date.now());
+  const productObj = { id, nameEn:name, price, sizes, descEn:desc, frontImage, backImage };
+
+  try{
+    await saveProduct(productObj);
+    PRODUCTS[id] = productObj;
+    if(!editingProductId){
+      PRODUCT_INDEX.push(id);
+      await saveProductIndex();
+    }
+  }catch(e){
+    errEl.textContent = 'Error saving product: ' + e.message;
+    return;
   }
-  try{ await saveProducts(); }catch(e){ alert('حدث خطأ أثناء الحفظ، حاول مرة أخرى.'); return; }
   document.getElementById('productFormArea').innerHTML = '';
   renderAdminProducts(document.getElementById('adminTabBody'));
   renderProducts();
 }
 
 async function deleteProduct(id){
-  if(!confirm('هل تريد حذف هذا التصميم؟')) return;
-  STORE.products = STORE.products.filter(p=>p.id!==id);
-  try{ await saveProducts(); }catch(e){ console.error(e); }
+  if(!confirm('Delete this design?')) return;
+  PRODUCT_INDEX = PRODUCT_INDEX.filter(x=>x!==id);
+  delete PRODUCTS[id];
+  try{
+    await saveProductIndex();
+    await deleteProductKey(id);
+  }catch(e){ console.error(e); }
   renderAdminProducts(document.getElementById('adminTabBody'));
   renderProducts();
 }
 
 function renderAdminOrders(body){
-  if(!STORE.orders.length){
-    body.innerHTML = '<p style="color:var(--ink-soft); font-size:.85rem;">لا توجد طلبات بعد.</p>';
-    return;
-  }
-  body.innerHTML = STORE.orders.map(o => `
+  if(!ORDERS.length){ body.innerHTML = '<p style="color:var(--muted); font-size:.85rem;">No orders yet.</p>'; return; }
+  body.innerHTML = ORDERS.map(o => `
     <div class="order-item">
       <div class="top">
         <strong>#${o.id.slice(-5)} — ${escapeHtml(o.productName)}</strong>
-        <span class="status-badge ${o.status==='مكتمل'?'done':''}">${o.status}</span>
+        <span class="status-badge ${o.status==='Fulfilled'?'done':''}">${o.status}</span>
       </div>
-      <div>مقاس ${o.size} × ${o.qty} — ${escapeHtml(o.name)} — ${escapeHtml(o.phone)}</div>
-      <div style="color:var(--ink-soft);">${escapeHtml(o.emirate)}، ${escapeHtml(o.address)}</div>
-      ${ o.notes ? `<div style="color:var(--ink-soft);">ملاحظات: ${escapeHtml(o.notes)}</div>` : '' }
+      <div>Size ${o.size} × ${o.qty} — ${escapeHtml(o.name)} — ${escapeHtml(o.phone)}</div>
+      <div style="color:var(--muted);">${escapeHtml(o.emirate)}, ${escapeHtml(o.address)}</div>
+      ${ o.notes ? `<div style="color:var(--muted);">Notes: ${escapeHtml(o.notes)}</div>` : '' }
       <div class="modal-actions" style="margin-top:8px;">
-        ${ o.status!=='مكتمل' ? `<button class="small-btn" onclick="markOrderDone('${o.id}')">وضع كمكتمل</button>` : '' }
+        ${ o.status!=='Fulfilled' ? `<button class="small-btn" onclick="markOrderDone('${o.id}')">Mark fulfilled</button>` : '' }
       </div>
     </div>
   `).join('');
 }
 async function markOrderDone(id){
-  const o = STORE.orders.find(x=>x.id===id);
-  if(o) o.status = 'مكتمل';
-  try{ await saveOrders(); }catch(e){ console.error(e); }
+  const o = ORDERS.find(x=>x.id===id);
+  if(o) o.status = 'Fulfilled';
+  try{ await saveOrdersList(); }catch(e){ console.error(e); }
   renderAdminOrders(document.getElementById('adminTabBody'));
 }
 
 function renderAdminSettings(body){
-  const s = STORE.settings;
+  const s = SETTINGS;
   body.innerHTML = `
-    <div class="field"><label>اسم المتجر</label><input type="text" id="st_brand" value="${escapeHtml(s.brandName)}"></div>
-    <div class="field"><label>عنوان الصفحة الرئيسية</label><input type="text" id="st_hero" value="${escapeHtml(s.heroTitle)}"></div>
-    <div class="field"><label>الوصف الفرعي</label><textarea id="st_tag" rows="2">${escapeHtml(s.heroTag)}</textarea></div>
-    <div class="field"><label>رابط الدفع عبر Ziina</label><input type="text" id="st_ziina" placeholder="https://pay.ziina.com/..." value="${escapeHtml(s.ziinaLink)}"></div>
-    <div class="field"><label>رقم واتساب لاستقبال الطلبات (بالصيغة الدولية بدون +، مثال 9715xxxxxxxx)</label><input type="text" id="st_wa" value="${escapeHtml(s.whatsappNumber)}"></div>
-    <div class="modal-actions">
-      <button class="cta-btn" onclick="saveAdminSettings()">حفظ الإعدادات</button>
-    </div>
-    <p style="color:var(--ink-soft); font-size:.75rem; margin-top:16px;">
-      ملاحظة: أنشئ رابط دفع من تطبيق Ziina (طلب دفع → إنشاء رابط) والصقه هنا. يمكنك إنشاء رابط عام أو رابط لكل طلب حسب المبلغ.
+    <div class="field"><label>Store name</label><input type="text" id="st_brand" value="${escapeHtml(s.brandName)}"></div>
+    <div class="field"><label>Subheading text</label><textarea id="st_tag" rows="2">${escapeHtml(s.heroTag)}</textarea></div>
+    <div class="field"><label>Ziina payment link</label><input type="text" id="st_ziina" placeholder="https://pay.ziina.com/..." value="${escapeHtml(s.ziinaLink)}"></div>
+    <div class="field"><label>WhatsApp number (international format, no +, e.g. 9715xxxxxxxx)</label><input type="text" id="st_wa" value="${escapeHtml(s.whatsappNumber)}"></div>
+    <div id="st_error" class="error-msg" style="padding:0; text-align:left; min-height:1em;"></div>
+    <div class="modal-actions"><button class="btn btn-primary" onclick="saveAdminSettings()">Save settings</button></div>
+    <p style="color:var(--muted); font-size:.75rem; margin-top:16px;">
+      Tip: create a payment link from the Ziina app (Request payment → Create link) and paste it here. You can use one general link or a different one per price point.
     </p>
   `;
 }
 async function saveAdminSettings(){
-  STORE.settings.brandName = document.getElementById('st_brand').value.trim();
-  STORE.settings.heroTitle = document.getElementById('st_hero').value.trim();
-  STORE.settings.heroTag = document.getElementById('st_tag').value.trim();
-  STORE.settings.ziinaLink = document.getElementById('st_ziina').value.trim();
-  STORE.settings.whatsappNumber = document.getElementById('st_wa').value.trim();
-  try{ await saveSettings(); renderSettings(); alert('تم الحفظ ✓'); }
-  catch(e){ alert('حدث خطأ أثناء الحفظ.'); }
+  SETTINGS.brandName = document.getElementById('st_brand').value.trim() || 'ZAYED.INK';
+  SETTINGS.heroTag = document.getElementById('st_tag').value.trim();
+  SETTINGS.ziinaLink = document.getElementById('st_ziina').value.trim();
+  SETTINGS.whatsappNumber = document.getElementById('st_wa').value.trim();
+  const errEl = document.getElementById('st_error');
+  try{ await saveSettings(); renderSettings(); errEl.style.color='#7bbf7b'; errEl.textContent = 'Saved ✓'; }
+  catch(e){ errEl.textContent = 'Error saving settings: ' + e.message; }
 }
 
 loadAll();
